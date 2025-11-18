@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penilaian Akhir Semester - PAK</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="login-page">
+    <video autoplay loop muted playsinline id="video-bg">
+      <source src="assets/background-video.mp4" type="video/mp4" />
+      Browser Anda tidak mendukung background video.
+    </video>
+    <div id="login-container" class="container active">
+      <div class="login-box">
+        <img
+          src="https://iili.io/KUa228Q.md.png"
+          alt="Logo SDN KEJURON"
+          class="logo"
+        />
+
+        <h1>Penilaian Akhir Semester</h1>
+        <p>Pendidikan Agama Kristen</p>
+
+        <input type="text" id="namaSiswa" placeholder="Nama Lengkap Siswa..." />
+        <input
+          type="text"
+          id="kelasSiswa"
+          placeholder="Kelas (contoh: 6A)..."
+        />
+        <input type="password" id="password" placeholder="Password..." />
+
+        <button id="login-btn">Login</button>
+        <p id="login-error" class="error-message"></p>
+      </div>
+    </div>
+
+    <div id="instructions-container" class="container">
+      <div class="content-box">
+        <h2>Petunjuk</h2>
+        <p>Selamat datang, <strong id="student-name-display">Siswa</strong>!</p>
+        <ul>
+          <li>
+            Ujian ini terdiri dari 35 soal Pilihan Ganda dan 15 soal Esai.
+          </li>
+          <li>Total waktu pengerjaan adalah <strong>90 menit</strong>.</li>
+          <li>Pastikan koneksi internet Anda stabil.</li>
+          <li>Ujian ini dilengkapi sistem anti-curang.</li>
+          <li>
+            Dilarang <strong>pindah tab</strong>,
+            <strong>minimize browser</strong>, atau
+            <strong>keluar dari mode layar penuh (fullscreen)</strong>.
+          </li>
+          <li>
+            Jika terdeteksi melakukan kecurangan, ujian akan
+            <strong>langsung selesai</strong> dan dicatat.
+          </li>
+          <li>
+            Ujian harus dikerjakan dalam mode layar penuh. Dilarang menggunakan
+            <strong>belah layar (split-screen)</strong>.
+          </li>
+        </ul>
+        <p>Klik "Mulai Ujian" untuk masuk ke mode layar penuh dan memulai.</p>
+        <button id="start-exam-btn">Mulai Ujian</button>
+      </div>
+    </div>
+
+    <div id="exam-container" class="container">
+      <header class="exam-header">
+        <h2 class="header-title">Ujian Pendidikan Agama Kristen</h2>
+        <div id="timer" class="header-timer">90:00</div>
+      </header>
+
+      <div id="question-container"></div>
+
+      <div class="navigation-buttons">
+        <button id="prev-btn">Sebelumnya</button>
+        <button id="next-btn">Berikutnya</button>
+        <button id="submit-btn" style="display: none">
+          Selesai & Kumpulkan
+        </button>
+      </div>
+    </div>
+
+    <div id="results-container" class="container">
+      <div class="content-box">
+        <h2>Ujian Selesai!</h2>
+        <p>
+          Terima kasih telah menyelesaikan ujian,
+          <strong id="student-name-final">Siswa</strong>.
+        </p>
+        <p
+          id="cheat-status-message"
+          class="error-message"
+          style="display: none"
+        ></p>
+
+        <h3>Hasil Pilihan Ganda Anda:</h3>
+        <p>Skor Benar: <strong id="correct-score">0</strong></p>
+        <p>Total Soal PG: <strong id="total-questions">0</strong></p>
+        <p>Nilai Akhir (PG):</p>
+        <h1 id="final-score" class="final-score-display">0</h1>
+
+        <p>Jawaban esai Anda telah dikirimkan untuk dinilai oleh guru.</p>
+        <p>Silakan tutup halaman ini.</p>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
